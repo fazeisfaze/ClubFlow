@@ -1,0 +1,18 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated caches (keep submitted dist/ artifacts)
+node_modules/
+.cache/
+coverage/
