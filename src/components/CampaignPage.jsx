@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { validateCampaign } from '../domain.js';
-import { Button, Card, Field, inputClass, Notice, PageHeading, StatusMessage, formatDate } from './Shared.jsx';
+import { Button, ButtonLink, Card, Field, inputClass, Notice, PageHeading, StatusMessage, formatDate } from './Shared.jsx';
 
 function updateDepartment(departments, departmentId, update) {
   return departments.map((department) => department.id === departmentId ? { ...department, ...update } : department);
 }
 
-export default function CampaignPage({ campaign, setCampaign, onNavigate, confirmed = false }) {
+export default function CampaignPage({ campaign, setCampaign, confirmed = false }) {
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState('');
   const [previewOpen, setPreviewOpen] = useState(false);
@@ -47,7 +47,7 @@ export default function CampaignPage({ campaign, setCampaign, onNavigate, confir
     <Notice>Prototype đang minh họa một câu lạc bộ và một chiến dịch. Chuyển sang màn hình duyệt hồ sơ không tự tạo thêm ứng viên hay thay đổi kết quả sàng lọc.</Notice>
     <form onSubmit={publish} noValidate>
       <fieldset disabled={confirmed} className="contents">
-      <Card title="Thông tin cơ bản" subtitle="Thông tin hiển thị trên trang tuyển thành viên.">
+      <Card className="university-card" title="Thông tin cơ bản" subtitle="Thông tin hiển thị trên trang tuyển thành viên.">
         <div className="grid gap-x-6 gap-y-4 p-5 sm:grid-cols-2 sm:p-6">
           <Field id="campaign-name" label="Tên chiến dịch" required error={errors.name} className="sm:col-span-2">
             <input className={inputClass} id="campaign-name" value={campaign.name} onChange={(event) => patch('name', event.target.value)} aria-invalid={Boolean(errors.name)} />
@@ -70,9 +70,9 @@ export default function CampaignPage({ campaign, setCampaign, onNavigate, confir
         </div>
       </Card>
 
-      <Card className="mt-5" title="Bộ phận & vị trí tuyển dụng" subtitle="Mỗi hồ sơ ứng tuyển gắn với một vị trí cụ thể." action={<Button type="button" variant="secondary" onClick={addDepartment}>＋ Thêm bộ phận</Button>}>
+      <Card className="university-card mt-5" title="Bộ phận & vị trí tuyển dụng" subtitle="Mỗi hồ sơ ứng tuyển gắn với một vị trí cụ thể." action={<Button type="button" variant="secondary" onClick={addDepartment}>＋ Thêm bộ phận</Button>}>
         <div className="grid gap-4 p-5 sm:p-6 lg:grid-cols-2">
-          {(campaign.departments || []).map((department) => <section key={department.id} className="rounded-xl border border-slate-200 bg-slate-50/60 p-4">
+          {(campaign.departments || []).map((department) => <section key={department.id} className="rounded-xl border border-l-2 border-l-amber-400 border-slate-200 bg-slate-50/60 p-4">
             <Field id={`department-${department.id}`} label="Tên bộ phận">
               <input className={inputClass} id={`department-${department.id}`} value={department.name} onChange={(event) => patch('departments', updateDepartment(campaign.departments, department.id, { name: event.target.value }))} />
             </Field>
@@ -103,12 +103,12 @@ export default function CampaignPage({ campaign, setCampaign, onNavigate, confir
         </div>
       </Card>
 
-      <div className="mt-5 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:px-5">
+      <div className="university-card mt-5 flex flex-col gap-3 rounded-2xl border border-l-4 border-l-amber-400 border-slate-200 bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:px-5">
         <div><p className="text-xs font-bold text-slate-700">{confirmed ? 'Lịch đã xác nhận' : 'Sẵn sàng tiếp tục?'}</p><p className="mt-1 text-[11px] text-slate-500">{confirmed ? 'Cấu hình chiến dịch đã chuyển sang chỉ đọc.' : 'Kiểm tra ngày và thông tin trước khi đăng chiến dịch.'}</p><StatusMessage>{message}</StatusMessage></div>
         <div className="flex flex-wrap gap-2"><Button type="button" variant="secondary" onClick={saveDraft}>Lưu bản nháp</Button><Button type="button" variant="secondary" onClick={() => setPreviewOpen(true)}>Xem trước</Button><Button type="submit">Đăng chiến dịch <span aria-hidden="true">→</span></Button></div>
       </div>
       </fieldset>
-      <div className="mt-4 flex justify-end"><Button type="button" variant="quiet" onClick={() => onNavigate('applications')}>Đến duyệt hồ sơ mẫu →</Button></div>
+      <div className="mt-4 flex justify-end"><ButtonLink variant="quiet" href="#/applications">Đến duyệt hồ sơ mẫu <span aria-hidden="true">→</span></ButtonLink></div>
     </form>
 
     {previewOpen && <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/50 p-4" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setPreviewOpen(false); }}>

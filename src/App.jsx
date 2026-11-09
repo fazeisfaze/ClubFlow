@@ -4,6 +4,7 @@ import CampaignPage from './components/CampaignPage.jsx';
 import ApplicationsPage from './components/ApplicationsPage.jsx';
 import SchedulePage from './components/SchedulePage.jsx';
 import { createInitialState } from './data.js';
+import { readThemePreference, saveThemePreference, toggleTheme } from './theme.js';
 
 const STORAGE_KEY = 'clubflow-react-prototype-v1';
 
@@ -23,6 +24,7 @@ function readRoute() {
 export default function App() {
   const [state, setState] = useState(loadInitialState);
   const [screen, setScreen] = useState(readRoute);
+  const [theme, setTheme] = useState(() => readThemePreference());
 
   useEffect(() => {
     const onHashChange = () => setScreen(readRoute());
@@ -40,19 +42,22 @@ export default function App() {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { /* UI remains functional without storage. */ }
   }, [state]);
 
-  function navigate(route) {
-    window.location.hash = `/${route}`;
-  }
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) themeColor.content = theme === 'dark' ? '#101a28' : '#142b47';
+    saveThemePreference(theme);
+  }, [theme]);
 
   function setCampaign(update) {
     setState((current) => ({ ...current, campaign: typeof update === 'function' ? update(current.campaign) : update }));
   }
 
   const page = screen === 'applications'
-    ? <ApplicationsPage state={state} setState={setState} onNavigate={navigate} confirmed={state.confirmed} />
+    ? <ApplicationsPage state={state} setState={setState} confirmed={state.confirmed} />
     : screen === 'schedule'
-      ? <SchedulePage state={state} setState={setState} onNavigate={navigate} />
-      : <CampaignPage campaign={state.campaign} setCampaign={setCampaign} onNavigate={navigate} confirmed={state.confirmed} />;
+      ? <SchedulePage state={state} setState={setState} />
+      : <CampaignPage campaign={state.campaign} setCampaign={setCampaign} confirmed={state.confirmed} />;
 
-  return <Shell screen={screen} campaign={state.campaign} confirmed={state.confirmed} canSchedule={state.applications.some((application) => application.status === 'Shortlisted')}>{page}</Shell>;
+  return <Shell screen={screen} campaign={state.campaign} confirmed={state.confirmed} canSchedule={state.applications.some((application) => application.status === 'Shortlisted')} theme={theme} onToggleTheme={() => setTheme((current) => toggleTheme(current))}>{page}</Shell>;
 }

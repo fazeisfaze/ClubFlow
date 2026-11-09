@@ -1,10 +1,18 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f4f7f6" />
+    <meta name="theme-color" content="#142b47" />
     <meta name="description" content="ClubFlow — điều phối tuyển thành viên câu lạc bộ." />
+    <script>
+      try {
+        if (localStorage.getItem('clubflow-color-theme') === 'dark') {
+          document.documentElement.dataset.theme = 'dark';
+          document.querySelector('meta[name="theme-color"]').content = '#101a28';
+        }
+      } catch { /* Start in light mode when browser storage is unavailable. */ }
+    </script>
     <title>ClubFlow · Tuyển thành viên</title>
   </head>
   <body>

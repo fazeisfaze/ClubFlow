@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { canConfirmSchedule, findConflicts, generateSchedule, parseMinute, scheduleSummary } from '../domain.js';
-import { Button, Card, Field, inputClass, Notice, PageHeading, Status, StatusMessage, downloadCsv, formatDate } from './Shared.jsx';
+import { Button, ButtonLink, Card, Field, inputClass, Notice, PageHeading, Status, StatusMessage, downloadCsv, formatDate } from './Shared.jsx';
 import { interviewerDefaults, roomDefaults } from '../data.js';
 
 function addMinutes(time, duration) {
@@ -16,7 +16,7 @@ function checkedAssignments(assignments) {
   });
 }
 
-export default function SchedulePage({ state, setState, onNavigate }) {
+export default function SchedulePage({ state, setState }) {
   const [date, setDate] = useState(state.campaign.interviewDate || '2026-11-07');
   const [duration, setDuration] = useState(20);
   const [windowStart, setWindowStart] = useState('09:00');
@@ -120,7 +120,7 @@ export default function SchedulePage({ state, setState, onNavigate }) {
     <PageHeading eyebrow="Bước 03 · Điều phối phỏng vấn" title="Xếp lịch phỏng vấn" description="Tạo lịch nháp cho các hồ sơ đã qua vòng CV. Kiểm tra khả năng của ứng viên, người phỏng vấn và phòng trước khi xác nhận." action={<Button type="button" variant="secondary" onClick={exportSchedule}>↓ Xuất lịch CSV</Button>} />
     <Notice>Chiến dịch: <strong>{state.campaign.name}</strong> · Ngày phỏng vấn dự kiến: <strong>{formatDate(date)}</strong>. Shortlisted chỉ có nghĩa là qua vòng CV, chưa phải kết quả tuyển cuối cùng.</Notice>
     <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,1fr)_290px]">
-      <Card title="Bản nháp lịch phỏng vấn" subtitle="Mỗi phòng chỉ tổ chức một buổi tại một thời điểm." action={<Status value={state.confirmed ? 'Confirmed' : 'Proposed'} />}>
+      <Card className="university-card" title="Bản nháp lịch phỏng vấn" subtitle="Mỗi phòng chỉ tổ chức một buổi tại một thời điểm." action={<Status value={state.confirmed ? 'Confirmed' : 'Proposed'} />}>
         <div className="grid gap-3 border-b border-slate-100 bg-slate-50/60 p-4 sm:grid-cols-2 lg:grid-cols-5 lg:items-end">
           <Field id="interview-date" label="Ngày phỏng vấn"><input className={inputClass} type="date" id="interview-date" value={date} disabled={state.confirmed} onChange={(event) => setDate(event.target.value)} /></Field>
           <Field id="window-start" label="Bắt đầu khung giờ"><input className={inputClass} type="time" id="window-start" value={windowStart} disabled={state.confirmed} onChange={(event) => setWindowStart(event.target.value)} /></Field>
@@ -139,11 +139,11 @@ export default function SchedulePage({ state, setState, onNavigate }) {
       </Card>
 
       <aside className="space-y-4">
-        <Card title="Điều kiện xác nhận" subtitle="Tất cả điều kiện phải đạt trước khi khóa lịch.">
+        <Card className="university-card" title="Điều kiện xác nhận" subtitle="Tất cả điều kiện phải đạt trước khi khóa lịch.">
           <div className="space-y-3 p-4 text-xs"><label className="flex cursor-pointer items-start gap-2.5"><input className="mt-0.5 accent-teal-700" type="checkbox" checked={Boolean(state.applicationsClosed)} disabled={state.confirmed} onChange={(event) => updateState({ applicationsClosed: event.target.checked })} /><span><strong className="block text-slate-800">Đã đóng nhận hồ sơ</strong><span className="mt-0.5 block text-[10px] text-slate-500">Hạn nhận: {state.campaign.closesAt}</span></span></label><div className="flex items-start gap-2.5"><span className={`mt-0.5 grid h-4 w-4 place-items-center rounded-full text-[9px] ${allReviewed ? 'bg-teal-100 text-teal-800' : 'bg-amber-100 text-amber-800'}`}>{allReviewed ? '✓' : '!'}</span><span><strong className="block text-slate-800">Đã đánh giá mọi hồ sơ</strong><span className="mt-0.5 block text-[10px] text-slate-500">{state.applications.filter((item) => item.status === 'Submitted').length} hồ sơ chưa đánh giá</span></span></div><div className="flex items-start gap-2.5"><span className={`mt-0.5 grid h-4 w-4 place-items-center rounded-full text-[9px] ${summary.Unassigned === 0 ? 'bg-teal-100 text-teal-800' : 'bg-amber-100 text-amber-800'}`}>{summary.Unassigned === 0 ? '✓' : '!'}</span><span><strong className="block text-slate-800">Đã xếp đủ hồ sơ Shortlisted</strong><span className="mt-0.5 block text-[10px] text-slate-500">{summary.Unassigned} chưa xếp · {summary.Conflict} xung đột</span></span></div></div>
         </Card>
         <Notice tone="amber"><strong>Quy tắc phân lịch</strong><br />15, 20 hoặc 30 phút mỗi lượt. Chỉ người phỏng vấn phù hợp vị trí và phòng hiện có được sử dụng.</Notice>
-        <div className="rounded-2xl border border-slate-200 bg-white p-4"><p className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">Trạng thái xác nhận</p><div className="mt-2"><Status value={state.confirmed ? 'Confirmed' : 'Proposed'} /></div><p className="mt-2 text-[10px] leading-4 text-slate-500">{state.confirmed ? 'Lịch đã khóa. Mọi chỉnh sửa và tạo lịch mới đều bị vô hiệu hóa.' : 'Lịch hiện tại vẫn là bản nháp cho đến khi được xác nhận.'}</p><StatusMessage>{message || (!gate.allowed ? gate.reasons.join(' ') : 'Tất cả điều kiện đã đạt.')}</StatusMessage></div>
+        <div className="university-card rounded-2xl border border-slate-200 bg-white p-4"><p className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">Trạng thái xác nhận</p><div className="mt-2"><Status value={state.confirmed ? 'Confirmed' : 'Proposed'} /></div><p className="mt-2 text-[10px] leading-4 text-slate-500">{state.confirmed ? 'Lịch đã khóa. Mọi chỉnh sửa và tạo lịch mới đều bị vô hiệu hóa.' : 'Lịch hiện tại vẫn là bản nháp cho đến khi được xác nhận.'}</p><StatusMessage>{message || (!gate.allowed ? gate.reasons.join(' ') : 'Tất cả điều kiện đã đạt.')}</StatusMessage></div>
       </aside>
     </div>
 
@@ -151,6 +151,6 @@ export default function SchedulePage({ state, setState, onNavigate }) {
 
     {confirmOpen && <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/50 p-4" role="presentation"><section className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="confirm-title"><p className="text-[10px] font-extrabold uppercase tracking-widest text-teal-700">Bước cuối</p><h2 id="confirm-title" className="mt-2 font-display text-xl font-extrabold">Xác nhận lịch phỏng vấn?</h2><p className="mt-2 text-sm leading-6 text-slate-600">Sau khi xác nhận, chiến dịch, hồ sơ và lịch sẽ chuyển sang chỉ đọc. Thao tác này không công bố kết quả tuyển dụng cuối cùng.</p><div className="mt-4 rounded-xl bg-slate-50 p-4 text-xs text-slate-700"><p>{assignments.length} hồ sơ · {formatDate(date)}</p><p className="mt-1">{summary.Proposed} lịch hợp lệ · 0 xung đột · 0 chưa xếp</p></div><div className="mt-5 flex justify-end gap-2"><Button type="button" variant="secondary" onClick={() => setConfirmOpen(false)}>Quay lại</Button><Button type="button" onClick={confirmFinal}>Xác nhận lịch</Button></div></section></div>}
 
-    <div className="mt-5 flex justify-between gap-2"><Button type="button" variant="quiet" onClick={() => onNavigate('applications')}>← Quay lại duyệt hồ sơ</Button><span className="self-center text-[10px] text-slate-400">Ngày phỏng vấn: {formatDate(date)}</span></div>
+    <div className="mt-5 flex justify-between gap-2"><ButtonLink variant="quiet" href="#/applications"><span aria-hidden="true">←</span> Quay lại duyệt hồ sơ</ButtonLink><span className="self-center text-xs text-slate-600">Ngày phỏng vấn: {formatDate(date)}</span></div>
   </>;
 }
