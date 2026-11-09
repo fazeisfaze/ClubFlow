@@ -3,7 +3,7 @@
 Submitted by:
 
 - 24121705 — Huynh Thanh Phuc
-- MSSV left blank as requested — Nguyen Diep Than
+- 24127120 — Nguyen Diep Than
 
 **Total I claim: TO BE COMPLETED BY THE TEAM / 100**
 
@@ -21,10 +21,8 @@ official rubric weights and enter an honest total before packaging.
 
 ## What I did not manage
 
-The second member's student ID is intentionally blank and must be supplied if required for the
-team's final zip/account submission. The team must also confirm the official point allocations,
-score every rubric criterion, and replace the pending total above. This draft does not claim a
-final self-assessment score.
+The team must confirm the official point allocations, score every rubric criterion, and replace
+the pending total above. This draft does not claim a final self-assessment score.
 
 ## What I would do differently
 

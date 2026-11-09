@@ -31,4 +31,4 @@ W3C, viewport, interaction, and brief audit results are recorded in `checks/`. S
 ## Team
 
 - Huynh Thanh Phuc — Student ID 24121705
-- Nguyen Diep Than — Student ID to be supplied by the team
+- Nguyen Diep Than — Student ID 24127120
