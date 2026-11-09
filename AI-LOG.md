@@ -1,5 +1,14 @@
 # AI-LOG.md — CSC13008 ClubFlow
 
+## 2026-11-09 — Update the self-assessment report
+Tool: Codex assistant.
+Prompt (English translation): “Update the self-assessment report.”
+Kept: The independent 94/100 assessment of implementation `ce54332`, the two team identities and the recorded test/browser/HTML evidence.
+Changed: Read the report and its official PDF template under this new request, replaced five unscored draft rows with the rubric's seven weighted criteria, linked evidence for every claim, documented remaining prompt/log/history limitations, and synchronized the submission checklist with `24121705-24127120_94.zip`.
+Rejected: Retaining the obsolete assertion that rubric weights were unavailable, inventing original prompts or manual team checks, and claiming that a final ZIP already exists. Earlier independent assessments were completed without reading the report; this entry records the later explicit request to edit it.
+Checks: Verified the seven maxima sum to 100, claims sum to 94 and linked local evidence exists. Reused the recorded 25-test/build, 33-browser-check and local Nu results; no application code changed and no new browser/test/build run is claimed for this documentation update.
+By hand: The report is assistant-assisted self-assessment, not an official awarded mark. No manual team review, ZIP verification, commit or push is claimed for this update.
+
 ## 2026-11-09 — Commit the fixes in scoped groups
 Tool: Codex assistant.
 Prompt (English translation): “Split the changes into separate commits and commit them.”
