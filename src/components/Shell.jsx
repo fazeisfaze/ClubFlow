@@ -1,7 +1,7 @@
 import React from 'react';
 import { routes, Status } from './Shared.jsx';
 
-export default function Shell({ screen, campaign, confirmed, canSchedule, children }) {
+export default function Shell({ screen, campaign, confirmed, canSchedule, theme = 'light', onToggleTheme, children }) {
   return <div className="university-page min-h-screen text-slate-800">
     <header className="university-header border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-[1440px] px-4 pt-3 sm:px-7 lg:px-10">
@@ -10,7 +10,15 @@ export default function Shell({ screen, campaign, confirmed, canSchedule, childr
             <span className="university-brand-mark grid h-9 w-9 place-items-center rounded-xl bg-teal-800 font-display text-lg font-extrabold text-white">C</span>
             <span className="font-display text-xl font-extrabold tracking-tight">ClubFlow</span>
           </a>
-          <div className="flex items-center gap-2.5 text-xs text-slate-500"><span className="grid h-8 w-8 place-items-center rounded-full border border-slate-200 bg-slate-50 font-bold text-teal-800">EX</span><span className="hidden sm:inline">Ban điều hành · Executive</span></div>
+          <div className="flex items-center gap-2.5 text-xs text-slate-500">
+            <span className="grid h-8 w-8 place-items-center rounded-full border border-slate-200 bg-slate-50 font-bold text-teal-800">EX</span>
+            <span className="hidden sm:inline">Ban điều hành · Executive</span>
+            <button type="button" className="theme-toggle inline-flex min-h-9 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 text-xs font-bold text-slate-700 transition hover:bg-slate-50" aria-label={theme === 'dark' ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối'} aria-pressed={theme === 'dark'} onClick={onToggleTheme}>
+              <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
+              <span className="hidden sm:inline">{theme === 'dark' ? 'Giao diện sáng' : 'Giao diện tối'}</span>
+              <span className="sm:hidden">{theme === 'dark' ? 'Sáng' : 'Tối'}</span>
+            </button>
+          </div>
         </div>
         <div className="my-3 flex flex-wrap items-center justify-between gap-3 border-l-[3px] border-amber-400 bg-slate-50/80 px-3 py-3 sm:px-4">
           <div className="min-w-0"><p className="text-[10px] font-extrabold uppercase tracking-[.13em] text-slate-400">Chiến dịch hiện tại · {campaign.club}</p><p className="mt-1 truncate font-display text-sm font-extrabold text-slate-800 sm:text-base">{campaign.name}</p><p className="mt-0.5 text-[11px] text-slate-500">Nhận hồ sơ: {campaign.opensAt} — {campaign.closesAt}</p></div>
