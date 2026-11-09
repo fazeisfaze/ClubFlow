@@ -3,7 +3,7 @@ import Shell from './components/Shell.jsx';
 import CampaignPage from './components/CampaignPage.jsx';
 import ApplicationsPage from './components/ApplicationsPage.jsx';
 import SchedulePage from './components/SchedulePage.jsx';
-import { createInitialState } from './data.js';
+import { createInitialState, hydrateState } from './data.js';
 import { readThemePreference, saveThemePreference, toggleTheme } from './theme.js';
 
 const STORAGE_KEY = 'clubflow-react-prototype-v1';
@@ -11,7 +11,7 @@ const STORAGE_KEY = 'clubflow-react-prototype-v1';
 function loadInitialState() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (saved?.campaign && saved?.applications && saved?.assignments) return saved;
+    if (saved?.campaign && Array.isArray(saved.applications) && Array.isArray(saved.assignments)) return hydrateState(saved);
   } catch { /* Fall back to deterministic fixtures. */ }
   return createInitialState();
 }
@@ -50,14 +50,23 @@ export default function App() {
   }, [theme]);
 
   function setCampaign(update) {
-    setState((current) => ({ ...current, campaign: typeof update === 'function' ? update(current.campaign) : update }));
+    setState((current) => {
+      if (current.confirmed) return current;
+      const campaign = typeof update === 'function' ? update(current.campaign) : update;
+      const applications = current.applications.map((application) => {
+        const department = campaign.departments.find((item) => item.positions.some((position) => position.id === application.positionId));
+        const position = department?.positions.find((item) => item.id === application.positionId);
+        return position ? { ...application, position: position.title, department: department.name } : application;
+      });
+      return { ...current, campaign, applications };
+    });
   }
 
   const page = screen === 'applications'
     ? <ApplicationsPage state={state} setState={setState} confirmed={state.confirmed} />
     : screen === 'schedule'
       ? <SchedulePage state={state} setState={setState} />
-      : <CampaignPage campaign={state.campaign} setCampaign={setCampaign} confirmed={state.confirmed} />;
+      : <CampaignPage campaign={state.campaign} applications={state.applications} setCampaign={setCampaign} confirmed={state.confirmed} />;
 
   return <Shell screen={screen} campaign={state.campaign} confirmed={state.confirmed} canSchedule={state.applications.some((application) => application.status === 'Shortlisted')} theme={theme} onToggleTheme={() => setTheme((current) => toggleTheme(current))}>{page}</Shell>;
 }

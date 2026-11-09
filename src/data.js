@@ -1,3 +1,6 @@
+export const sampleAvailability = [{ date: '2026-11-07', start: '09:00', end: '11:00' }];
+export const scheduleDefaults = { date: '2026-11-07', duration: 20, windowStart: '09:00', windowEnd: '11:00' };
+
 export const campaignDefaults = {
   name: 'Tuyển thành viên Câu lạc bộ 2026',
   club: 'CLB Sáng tạo Sinh viên',
@@ -22,6 +25,11 @@ export const applicationDefaults = [
   { id: 'A06', applicantId: 'applicant-emma', applicant: 'Emma Đỗ', position: 'Communications', department: 'Truyền thông', submittedAt: '2026-10-20 08:50', status: 'Rejected', cv: 'Emma_Do_CV.pdf', cvEducation: 'Quản trị kinh doanh · Năm 2', cvExperience: 'Tham gia các hoạt động ngoại khóa của lớp.', cvSkills: 'Làm việc nhóm · Thuyết trình', statement: 'Mình quan tâm đến các hoạt động cộng đồng và truyền thông.', note: 'Chưa phù hợp yêu cầu vị trí.' },
 ];
 
+applicationDefaults.forEach((application) => {
+  application.positionId = application.position === 'Content Creator' ? 'content-creator' : 'communications';
+  application.availability = structuredClone(sampleAvailability);
+});
+
 export const interviewerDefaults = [
   { id: 'interviewer-mai', name: 'Ngọc Mai', positions: ['Content Creator'], availableFrom: '09:00', availableTo: '11:00' },
   { id: 'interviewer-bao', name: 'Quốc Bảo', positions: ['Communications'], availableFrom: '09:00', availableTo: '11:00' },
@@ -33,11 +41,17 @@ export const roomDefaults = [
   { id: 'room-c102', name: 'Phòng C102' },
 ];
 
+interviewerDefaults.forEach((interviewer) => {
+  interviewer.positionIds = interviewer.positions.map((position) => position === 'Content Creator' ? 'content-creator' : 'communications');
+  interviewer.availability = structuredClone(sampleAvailability);
+});
+roomDefaults.forEach((room) => { room.availability = structuredClone(sampleAvailability); });
+
 export const assignmentDefaults = [
   { id: 'I01', applicationId: 'A01', applicantId: 'applicant-an', applicant: 'An Nguyễn', position: 'Content Creator', interviewerId: 'interviewer-mai', interviewer: 'Ngọc Mai', roomId: 'room-c101', room: 'Phòng C101', date: '2026-11-07', start: '09:00', end: '09:20', status: 'Conflict', conflicts: ['applicant'] },
   { id: 'I02', applicationId: 'A02', applicantId: 'applicant-an', applicant: 'An Nguyễn', position: 'Communications', interviewerId: 'interviewer-bao', interviewer: 'Quốc Bảo', roomId: 'room-c102', room: 'Phòng C102', date: '2026-11-07', start: '09:10', end: '09:30', status: 'Conflict', conflicts: ['applicant'] },
   { id: 'I03', applicationId: 'A03', applicantId: 'applicant-bao', applicant: 'Bảo Trần', position: 'Content Creator', interviewerId: 'interviewer-linh', interviewer: 'Thu Linh', roomId: 'room-c102', room: 'Phòng C102', date: '2026-11-07', start: '09:30', end: '09:50', status: 'Proposed', conflicts: [] },
-  { id: 'I04', applicationId: 'A04', applicantId: 'applicant-chi', applicant: 'Chi Lê', position: 'Communications', interviewerId: '', interviewer: '', roomId: '', room: '', date: '2026-11-07', start: '', end: '', status: 'Unassigned', reason: 'Chưa có khung giờ chung phù hợp với người phỏng vấn và ứng viên.', conflicts: [] },
+  { id: 'I04', applicationId: 'A04', applicantId: 'applicant-chi', applicant: 'Chi Lê', position: 'Communications', interviewerId: '', interviewer: '', roomId: '', room: '', date: '2026-11-07', start: '', end: '', status: 'Unassigned', reason: 'Chưa gán đủ giờ, người phỏng vấn và phòng.', conflicts: [] },
   { id: 'I05', applicationId: 'A05', applicantId: 'applicant-dung', applicant: 'Dũng Phạm', position: 'Content Creator', interviewerId: 'interviewer-mai', interviewer: 'Ngọc Mai', roomId: 'room-c101', room: 'Phòng C101', date: '2026-11-07', start: '10:00', end: '10:20', status: 'Proposed', conflicts: [] },
 ];
 
@@ -46,8 +60,22 @@ export function createInitialState() {
     campaign: structuredClone(campaignDefaults),
     applications: structuredClone(applicationDefaults),
     assignments: structuredClone(assignmentDefaults),
+    scheduleSettings: structuredClone(scheduleDefaults),
+    draftSettings: structuredClone(scheduleDefaults),
     confirmed: false,
     selectedApplicationId: 'A01',
     applicationsClosed: true,
+  };
+}
+
+export function hydrateState(saved) {
+  const initial = createInitialState();
+  return { ...initial, ...saved,
+    scheduleSettings: { ...scheduleDefaults, date: saved.campaign.interviewDate || scheduleDefaults.date, ...saved.scheduleSettings },
+    draftSettings: { ...scheduleDefaults, date: saved.campaign.interviewDate || scheduleDefaults.date, ...saved.draftSettings },
+    applications: saved.applications.map((application) => {
+      const fixture = applicationDefaults.find((item) => item.id === application.id && item.applicantId === application.applicantId);
+      return { ...fixture, ...application, availability: application.availability ?? fixture?.availability ?? [] };
+    }),
   };
 }
