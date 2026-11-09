@@ -11,3 +11,6 @@ outside network access is required.
 | Interview Scheduling | `dist/index.html#/schedule` |
 
 Build command: `npm run build`.
+
+Appearance: Use the header control to switch between light and dark themes. The preference is stored
+in this browser when local storage is available; otherwise the page starts in light mode.

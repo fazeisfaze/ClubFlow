@@ -40,6 +40,13 @@ Changed: Replaced the published 9,105-line root commit `980f2bb` with the scoped
 
 Check: The rewritten `main` tree matched the pre-rewrite `main` tree exactly before the latest theme/accessibility commit was created. `npm test` passed (12/12) and `npm run build` passed after the rewrite. The backup branch is retained for rollback; coordinate this rewritten history with collaborators.
 
+## 2026-11-09 — Add dark theme
+Tool: OpenCode, GPT-6 Luna.
+Prompt: “Add a dark theme to the website.”
+Changed: Added a header light/dark toggle, persisted preference with a light-mode fallback, startup theme-color synchronization, and dark palette/surface/status styles in `src/theme.js`, `src/App.jsx`, `src/components/Shell.jsx`, `assets/css/styles.css`, and `index.html`. Documented the preference in `PROTOTYPE.md`.
+Tests-first evidence: `tests/theme.test.mjs` first failed because `src/theme.js` did not exist; after implementation, five theme checks passed for defaults, persistence/failure handling, toggling, accessible control wiring, dark surfaces, and text contrast.
+Validation: Full test/build results and the browser-preview limitation are recorded in `checks/dark-theme.md`.
+
 ## 2026-11-09 — Project rules and feature specification
 Tool: OpenCode, GPT-6 Luna.
 Asked for: Derive the project constitution and three-screen feature specification from `REQUIREMENT.md` and the ClubFlow final project brief.
