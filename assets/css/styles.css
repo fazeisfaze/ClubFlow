@@ -1,29 +1,80 @@
 @import "tailwindcss";
 
+@theme {
+  --color-teal-50: #eaf3fb;
+  --color-teal-100: #d5e7f6;
+  --color-teal-200: #b4d4ed;
+  --color-teal-300: #86b9df;
+  --color-teal-400: #5798c7;
+  --color-teal-500: #3278ad;
+  --color-teal-600: #245f91;
+  --color-teal-700: #194c78;
+  --color-teal-800: #143c60;
+  --color-teal-900: #112f4b;
+  --color-teal-950: #091d30;
+  --color-slate-50: #f4f7fb;
+  --color-slate-100: #e9eff6;
+  --color-slate-200: #d5dfeb;
+  --color-slate-300: #b7c8d9;
+  --color-slate-400: #5b6b80;
+  --color-slate-500: #5d7188;
+  --color-slate-600: #43576f;
+  --color-slate-700: #2d4159;
+  --color-slate-800: #1c3049;
+  --color-slate-900: #13263d;
+  --color-slate-950: #091728;
+  --font-display: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 :root {
+  --university-navy: #142b47;
+  --university-blue: #194c78;
+  --university-blue-light: #eaf3fb;
+  --university-gold: #d6a844;
+  --university-paper: #f4f7fb;
+  --university-line: #d5dfeb;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #172b3a;
-  background: #f4f7f6;
+  color: #1c3049;
+  background: var(--university-paper);
+  color-scheme: light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
-html { min-width: 320px; background: #f4f7f6; }
+html { min-width: 320px; background: var(--university-paper); }
 body { min-width: 320px; min-height: 100vh; margin: 0; }
 button, input, select, textarea { font: inherit; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 3px solid #2aa99a; outline-offset: 3px; }
-::selection { background: #bce8df; color: #103d3c; }
+:focus-visible { outline: 3px solid var(--university-gold); outline-offset: 3px; }
+::selection { background: #d5e7f6; color: #112f4b; }
 
-.page-scroll { scrollbar-color: #c8d5d3 transparent; scrollbar-width: thin; }
-.status-pill { display: inline-flex; align-items: center; gap: .375rem; border-radius: 9999px; padding: .25rem .625rem; font-size: .6875rem; font-weight: 700; line-height: 1rem; white-space: nowrap; }
+.page-scroll { scrollbar-color: #b7c8d9 transparent; scrollbar-width: thin; }
+.status-pill { display: inline-flex; align-items: center; gap: .375rem; border: 1px solid currentColor; border-radius: .5rem; padding: .25rem .625rem; font-size: .6875rem; font-weight: 700; line-height: 1rem; white-space: nowrap; }
 .status-pill::before { width: .375rem; height: .375rem; border-radius: 50%; background: currentColor; content: ""; }
 .status-submitted, .status-proposed { background: #eef2ff; color: #405bb5; }
-.status-shortlisted, .status-confirmed { background: #e6f5f0; color: #087b67; }
+.status-shortlisted, .status-confirmed { background: #eaf3fb; color: #143c60; }
 .status-rejected, .status-conflict { background: #fff0ee; color: #b74743; }
-.status-unassigned { background: #fff4e7; color: #ad671d; }
+.status-unassigned { background: #fff4e7; color: #96530f; }
+
+.university-page { background: var(--university-paper); }
+.university-header { border-top: 4px solid var(--university-gold); box-shadow: 0 5px 18px rgb(20 43 71 / 6%); }
+.university-brand-mark { box-shadow: 0 5px 12px rgb(20 43 71 / 16%); }
+.university-step[aria-current="step"]::after { position: absolute; right: 1rem; bottom: -2px; left: 1rem; height: 3px; border-radius: 4px 4px 0 0; background: var(--university-gold); content: ""; }
+.university-heading { color: var(--university-navy); }
+.university-card { border-top: 2px solid #d6a844; box-shadow: 0 5px 16px rgb(20 43 71 / 5%); }
+.university-stat { border-top: 3px solid var(--university-gold); }
+.university-button { letter-spacing: .01em; }
+.university-button:not(:disabled):hover { transform: translateY(-1px); }
+.university-button:disabled { filter: saturate(.7); }
+.university-input { transition: border-color 150ms ease, box-shadow 150ms ease; }
+.university-notice { box-shadow: inset 3px 0 0 rgb(214 168 68 / 75%); }
+.university-heading { text-wrap: balance; }
+[class~="text-[9px]"] { font-size: .6875rem; }
+[class~="text-[10px]"] { font-size: .75rem; }
+[class~="text-[11px]"] { font-size: .8125rem; }
 
 @media (max-width: 640px) {
   .mobile-order-detail { order: -1; }
   .safe-bottom { padding-bottom: max(1.25rem, env(safe-area-inset-bottom)); }
+  .university-step[aria-current="step"]::after { right: .5rem; left: .5rem; }
 }

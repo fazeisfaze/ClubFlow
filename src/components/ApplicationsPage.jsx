@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from 'react';
 import { decideApplication } from '../domain.js';
-import { Button, Card, Field, inputClass, Notice, PageHeading, Status, StatusMessage, downloadCsv } from './Shared.jsx';
+import { Button, ButtonLink, Card, Field, inputClass, Notice, PageHeading, Status, StatusMessage, downloadCsv } from './Shared.jsx';
 
 const pageSize = 5;
 
-export default function ApplicationsPage({ state, setState, onNavigate, confirmed = false }) {
+export default function ApplicationsPage({ state, setState, confirmed = false }) {
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [positionFilter, setPositionFilter] = useState('');
@@ -46,17 +46,17 @@ export default function ApplicationsPage({ state, setState, onNavigate, confirme
         ['Ứng viên', uniqueApplicants, 'Sinh viên riêng biệt'],
         ['Qua vòng CV', shortlistedCount, 'Sẵn sàng xếp lịch'],
         ['Từ chối', state.applications.filter((application) => application.status === 'Rejected').length, 'Hồ sơ đã đánh giá'],
-      ].map(([label, value, sub]) => <div key={label} className="rounded-2xl border border-slate-200 bg-white p-3.5 shadow-sm sm:p-4"><span className="text-[11px] font-semibold text-slate-500">{label}</span><strong className="mt-2 block font-display text-2xl font-extrabold leading-none text-slate-900">{value}</strong><span className="mt-1.5 block text-[10px] text-slate-400">{sub}</span></div>)}
+      ].map(([label, value, sub]) => <div key={label} className="university-stat rounded-xl border border-slate-200 bg-white p-3.5 shadow-sm sm:p-4"><span className="text-[11px] font-semibold text-slate-500">{label}</span><strong className="mt-2 block font-display text-2xl font-extrabold leading-none text-slate-900">{value}</strong><span className="mt-1.5 block text-[10px] text-slate-500">{sub}</span></div>)}
     </div>
     <Notice>Đang xem <strong>{state.campaign.name}</strong>. Ghi chú nội bộ chỉ dành cho Executive và không được chia sẻ với ứng viên hoặc người phỏng vấn.</Notice>
 
     <div className={`mt-5 grid items-start gap-4 ${detailOpen ? 'lg:grid-cols-[minmax(0,1.55fr)_minmax(300px,.85fr)]' : 'lg:grid-cols-1'}`}>
-      <section className="min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" aria-labelledby="applications-list-title">
+      <section className="university-card min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" aria-labelledby="applications-list-title">
         <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 px-4 py-4 sm:px-5"><div><h2 id="applications-list-title" className="font-display text-sm font-extrabold">Danh sách hồ sơ</h2><p className="mt-1 text-[11px] text-slate-500">{filtered.length} hồ sơ phù hợp bộ lọc</p></div><Button type="button" variant="secondary" className="min-h-8 px-3" onClick={exportApplications}>Xuất danh sách</Button></div>
         <div className="grid gap-2 border-b border-slate-100 p-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-[minmax(130px,1fr)_140px_155px]">
-          <label className="sm:col-span-2 lg:col-span-1 xl:col-span-1"><span className="sr-only">Tìm theo tên, mã hồ sơ hoặc vị trí</span><input className={inputClass} type="search" placeholder="Tìm tên, mã hồ sơ, vị trí…" value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} /></label>
-          <label><span className="sr-only">Lọc theo trạng thái</span><select className={inputClass} value={statusFilter} onChange={(event) => { setStatusFilter(event.target.value); setPage(1); }}><option value="">Mọi trạng thái</option><option value="Submitted">Mới nộp</option><option value="Shortlisted">Shortlisted</option><option value="Rejected">Rejected</option></select></label>
-          <label><span className="sr-only">Lọc theo vị trí</span><select className={inputClass} value={positionFilter} onChange={(event) => { setPositionFilter(event.target.value); setPage(1); }}><option value="">Mọi vị trí</option>{positions.map((position) => <option key={position}>{position}</option>)}</select></label>
+          <label className="sm:col-span-2 lg:col-span-1 xl:col-span-1" htmlFor="application-search"><span className="filter-label mb-1.5 block text-xs font-semibold text-slate-700">Tìm hồ sơ</span><input id="application-search" className={inputClass} type="search" placeholder="Tên, mã hồ sơ hoặc vị trí…" value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} /></label>
+          <label htmlFor="application-status"><span className="filter-label mb-1.5 block text-xs font-semibold text-slate-700">Trạng thái</span><select id="application-status" className={inputClass} value={statusFilter} onChange={(event) => { setStatusFilter(event.target.value); setPage(1); }}><option value="">Mọi trạng thái</option><option value="Submitted">Mới nộp</option><option value="Shortlisted">Shortlisted</option><option value="Rejected">Rejected</option></select></label>
+          <label htmlFor="application-position"><span className="filter-label mb-1.5 block text-xs font-semibold text-slate-700">Vị trí</span><select id="application-position" className={inputClass} value={positionFilter} onChange={(event) => { setPositionFilter(event.target.value); setPage(1); }}><option value="">Mọi vị trí</option>{positions.map((position) => <option key={position}>{position}</option>)}</select></label>
         </div>
         <div className="page-scroll max-w-full overflow-x-auto">
           <table className="w-full min-w-[680px] border-collapse text-left text-[11px]">
@@ -71,7 +71,7 @@ export default function ApplicationsPage({ state, setState, onNavigate, confirme
         <div className="flex items-center justify-between gap-3 border-t border-slate-100 px-3 py-3 text-[10px] text-slate-500 sm:px-4"><span>Trang {page} / {pages} · {filtered.length} hồ sơ</span><div className="flex gap-2"><Button type="button" variant="secondary" className="min-h-8 px-3" disabled={page <= 1} onClick={() => setPage((current) => current - 1)}>Trước</Button><Button type="button" variant="secondary" className="min-h-8 px-3" disabled={page >= pages} onClick={() => setPage((current) => current + 1)}>Sau</Button></div></div>
       </section>
 
-      {detailOpen && <aside className="mobile-order-detail min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" aria-labelledby="application-detail-title">
+      {detailOpen && <aside className="university-card mobile-order-detail min-w-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" aria-labelledby="application-detail-title">
         {selected ? <>
           <div className="flex items-start justify-between gap-3 border-b border-slate-100 px-4 py-4 sm:px-5"><div><p className="text-[10px] font-extrabold uppercase tracking-widest text-teal-700">Chi tiết hồ sơ · {selected.id}</p><h2 id="application-detail-title" className="mt-1 font-display text-lg font-extrabold text-slate-900">{selected.applicant}</h2><p className="mt-1 text-[11px] text-slate-500">{selected.position} · {selected.department}</p></div><div className="flex flex-col items-end gap-2"><Status value={selected.status} /><Button type="button" variant="quiet" className="min-h-7 px-2 text-[10px]" onClick={() => setDetailOpen(false)}>Đóng chi tiết</Button></div></div>
           <div className="space-y-4 p-4 sm:p-5">
@@ -86,6 +86,6 @@ export default function ApplicationsPage({ state, setState, onNavigate, confirme
       </aside>}
     </div>
 
-    <div className="mt-5 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between sm:px-5"><div><p className="text-xs font-bold text-slate-800">Tiếp tục xếp lịch phỏng vấn</p><p className="mt-1 text-[11px] text-slate-500">Chỉ {shortlistedCount} hồ sơ Shortlisted được chuyển sang bước tiếp theo.</p></div><Button type="button" disabled={!shortlistedCount} onClick={() => onNavigate('schedule')}>Đến xếp lịch <span aria-hidden="true">→</span></Button></div>
+    <div className="mt-5 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-4 sm:flex-row sm:items-center sm:justify-between sm:px-5"><div><p className="text-xs font-bold text-slate-800">Tiếp tục xếp lịch phỏng vấn</p><p className="mt-1 text-[11px] text-slate-600">Chỉ {shortlistedCount} hồ sơ Shortlisted được chuyển sang bước tiếp theo.</p></div>{shortlistedCount > 0 ? <ButtonLink href="#/schedule">Đến xếp lịch <span aria-hidden="true">→</span></ButtonLink> : <Button type="button" disabled>Chưa có hồ sơ đủ điều kiện xếp lịch</Button>}</div>
   </>;
 }

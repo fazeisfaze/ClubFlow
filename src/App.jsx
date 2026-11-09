@@ -40,19 +40,15 @@ export default function App() {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { /* UI remains functional without storage. */ }
   }, [state]);
 
-  function navigate(route) {
-    window.location.hash = `/${route}`;
-  }
-
   function setCampaign(update) {
     setState((current) => ({ ...current, campaign: typeof update === 'function' ? update(current.campaign) : update }));
   }
 
   const page = screen === 'applications'
-    ? <ApplicationsPage state={state} setState={setState} onNavigate={navigate} confirmed={state.confirmed} />
+    ? <ApplicationsPage state={state} setState={setState} confirmed={state.confirmed} />
     : screen === 'schedule'
-      ? <SchedulePage state={state} setState={setState} onNavigate={navigate} />
-      : <CampaignPage campaign={state.campaign} setCampaign={setCampaign} onNavigate={navigate} confirmed={state.confirmed} />;
+      ? <SchedulePage state={state} setState={setState} />
+      : <CampaignPage campaign={state.campaign} setCampaign={setCampaign} confirmed={state.confirmed} />;
 
   return <Shell screen={screen} campaign={state.campaign} confirmed={state.confirmed} canSchedule={state.applications.some((application) => application.status === 'Shortlisted')}>{page}</Shell>;
 }
