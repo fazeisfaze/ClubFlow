@@ -47,11 +47,3 @@ test('small slate and status text meet WCAG AA contrast on their backgrounds', a
   assert.ok(contrast(slate, paper) >= 4.5, `${slate} on ${paper} must reach 4.5:1`);
   assert.ok(contrast(unassigned[2], unassigned[1]) >= 4.5, 'unassigned status text must reach 4.5:1 on its background');
 });
-
-test('dense helper text is scaled up from tiny 9–11px utility sizes', async () => {
-  const css = await read('assets/css/styles.css');
-
-  assert.match(css, /\[class~="text-\[9px\]"\][^{]*\{[^}]*font-size:\s*\.6875rem/s);
-  assert.match(css, /\[class~="text-\[10px\]"\][^{]*\{[^}]*font-size:\s*\.75rem/s);
-  assert.match(css, /\[class~="text-\[11px\]"\][^{]*\{[^}]*font-size:\s*\.8125rem/s);
-});

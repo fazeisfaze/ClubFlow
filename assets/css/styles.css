@@ -76,14 +76,23 @@
 }
 
 html { min-width: 320px; background: var(--university-paper); }
-body { min-width: 320px; min-height: 100vh; margin: 0; }
+body { min-width: 320px; min-height: 100vh; margin: 0; font-size: 1rem; line-height: 1.5; overflow-wrap: anywhere; }
 button, input, select, textarea { font: inherit; }
+button, a, summary { min-height: 2.75rem; }
+button, summary { min-width: 2.75rem; }
+summary { align-content: center; }
+input:not([type="checkbox"]), select { min-height: 2.75rem; }
+input[type="checkbox"] { width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
+label:has(input[type="checkbox"]) { min-height: 2.75rem; }
+th > button { display: inline-flex; align-items: center; padding: .5rem; text-align: left; }
+.dialog-panel { max-height: calc(100dvh - 2rem); overflow-y: auto; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
-:focus-visible { outline: 3px solid var(--university-gold); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--university-blue); outline-offset: 3px; }
+[data-theme="dark"] :focus-visible { outline-color: var(--university-gold); }
 ::selection { background: #d5e7f6; color: #112f4b; }
 
 .page-scroll { scrollbar-color: #b7c8d9 transparent; scrollbar-width: thin; }
-.status-pill { display: inline-flex; align-items: center; gap: .375rem; border: 1px solid currentColor; border-radius: .5rem; padding: .25rem .625rem; font-size: .6875rem; font-weight: 700; line-height: 1rem; white-space: nowrap; }
+.status-pill { display: inline-flex; align-items: center; gap: .375rem; border: 1px solid currentColor; border-radius: .5rem; padding: .25rem .625rem; font-size: 1rem; font-weight: 700; line-height: 1.5; white-space: nowrap; }
 .status-pill::before { width: .375rem; height: .375rem; border-radius: 50%; background: currentColor; content: ""; }
 .status-submitted, .status-proposed { background: #eef2ff; color: #405bb5; }
 .status-shortlisted, .status-confirmed { background: #eaf3fb; color: #143c60; }
@@ -103,9 +112,6 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 .university-input { transition: border-color 150ms ease, box-shadow 150ms ease; }
 .university-notice { box-shadow: inset 3px 0 0 rgb(214 168 68 / 75%); }
 .university-heading { text-wrap: balance; }
-[class~="text-[9px]"] { font-size: .6875rem; }
-[class~="text-[10px]"] { font-size: .75rem; }
-[class~="text-[11px]"] { font-size: .8125rem; }
 
 :root[data-theme="dark"] body,
 [data-theme="dark"] .university-page { background: var(--university-paper); color: #edf4fb; }
@@ -129,9 +135,11 @@ button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 [data-theme="dark"] [class~="text-teal-800"],
 [data-theme="dark"] [class~="text-teal-900"],
 [data-theme="dark"] [class~="text-teal-950"] { color: #a9d6f5; }
+[data-theme="dark"] [class~="text-amber-700"],
 [data-theme="dark"] [class~="text-amber-800"],
 [data-theme="dark"] [class~="text-amber-900"],
 [data-theme="dark"] [class~="text-amber-950"] { color: #f1cd7b; }
+[data-theme="dark"] [class~="text-red-600"],
 [data-theme="dark"] [class~="text-red-700"] { color: #ffaaa5; }
 [data-theme="dark"] [class~="text-blue-700"] { color: #b5ccff; }
 [data-theme="dark"] [class~="border-slate-100"],
