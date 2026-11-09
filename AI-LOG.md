@@ -1,5 +1,31 @@
 # AI-LOG.md — CSC13008 ClubFlow
 
+## 2026-11-09 — Commit the fixes in scoped groups
+Tool: Codex assistant.
+Prompt (English translation): “Split the changes into separate commits and commit them.”
+Kept: The verified implementation, all current and historical evidence, and the rubric PDF.
+Changed: Grouped the work into campaign/scheduling validation and connected forms; responsive styles, shell and obsolete-test cleanup; historical rubric audits; current prototype documentation/screenshots/checks; and the compiled production build. This is a retrospective split of the completed changes, not a claim that they were originally developed in that sequence.
+Checks: Reran `npm.cmd test`: 25 passed, 0 failed. Checked source/document whitespace and the staged file lists; captured HTML retains the browser's whitespace-only lines verbatim and is excluded from that whitespace check. The preceding fix entry records the completed production build, browser and local Nu validation; those checks were not rerun merely to organize commits.
+By hand: No manual team check is claimed. Used the existing Git author configuration. Commits are local; no push was requested or performed. The self-assessment report and its template were not read or modified.
+
+## 2026-11-09 — Fix main-flow, responsive and design defects
+Tool: Codex assistant.
+Prompt (English translation): “Fix the issues in Three screens and main flow, Responsive and Design.”
+Kept: Three routes/order, initial campaign dates, application identities/statuses, the five initial schedule rows and 2/2/1 totals, local React/Tailwind assets, and the rubric PDF.
+Changed: Unified generation/edit/confirmation validation; persisted selected and draft settings; invalidated stale drafts; enforced a shared duration; added applicant/interviewer/room availability and stable position IDs; migrated old browser state; validated all campaign position fields and receiving dates. Increased body/control/status text to 16 px and touch targets to 44 px, improved dark warning contrast, made dialogs scroll within phone height, and refreshed documentation/screenshots.
+Caught by checks: The initial browser colour scan found low-contrast required-field markers and the Unassigned total in dark mode; those colours were corrected before the final run. Visual inspection also caught damaged Vietnamese strings introduced by a PowerShell-to-Python encoding conversion; UTF-8 text was restored before the final snapshots and HTML validation.
+Rejected: Trusting cached Proposed/conflict labels, permitting per-interview duration changes, claiming applicant availability without data, or reusing old screenshots/validation claims for the new implementation. Removed a static test that checked the obsolete tiny-font CSS override; actual rendered font/target sizes are measured in the browser evidence.
+Checks: `npm.cmd test` passed 25 tests and `npm.cmd run build` passed. Chrome checked 18 light/dark viewport combinations plus workflow regressions; measured text was at least 16 px and independent targets at least 44×44 px, with no page overflow. Local Nu HTML Checker returned zero errors/warnings on 11 rendered states. Raw results are in `checks/rubric-fixes/`; no HTML was uploaded.
+By hand: No manual team verification or final score is claimed. The self-assessment report and its template were not read or modified. No commit or push was performed for this fix pass.
+
+## 2026-11-09 — Post-merge rubric reassessment
+Tool: Codex assistant.
+Asked for: Compare the merged codebase with the rubric without reading the self-assessment report.
+Kept: The seven rubric weights and the explicit ClubFlow permission for React. Estimated 82/100 for source snapshot `450339d`; see `checks/rubric-audit-current.md`.
+Changed: Reassessed visible labels, native navigation, improved contrast, translated prompt evidence and scoped history. Ran 17 tests and the production build, measured 18 light/dark screen-width combinations, captured 18 screenshots, and validated six rendered HTML snapshots locally with Nu HTML Checker 26.11.9: zero errors, four section-heading warnings. No HTML was uploaded to an external validator.
+Rejected: Reusing the pre-merge 68/100 estimate for the updated interface or treating the passing static/unit tests as proof that all scheduling constraints hold. Browser checks still reproduced the five campaign/scheduling validation defects documented in the current audit.
+By hand: No manual team verification is claimed. Neither the self-assessment report nor its PDF template was read. The score is provisional and excludes honesty, late-submission and packaging adjustments.
+
 ## 2026-11-09 — Merge the updated remote version and preserve the rubric
 Tool: Codex assistant.
 Asked for: Merge the new files over the old local version while keeping the rubric PDF.

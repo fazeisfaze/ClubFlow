@@ -13,3 +13,12 @@
 - Browser console/page errors: 0; document width equals viewport width at all required sizes.
 - Evidence: `screenshots/applications-360.png`, `screenshots/applications-768.png`,
   `screenshots/applications-1280.png`.
+
+## Latest rubric-fixes pass
+
+- The detail panel displays each sample application's submitted availability.
+- Text is at least 16 px and independent targets are at least 44×44 px in the measured states.
+- Long campaign and applicant names wrap rather than being truncated.
+- The table wrapper is keyboard-focusable and labelled for horizontal scrolling.
+- Updated light and dark viewport captures are in `screenshots/`; current raw checks are in
+  `checks/rubric-fixes/`. Notes and decisions remain locked after confirmation.

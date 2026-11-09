@@ -13,3 +13,13 @@
   `screenshots/campaign-1280.png`.
 
 The test was run against a local preview build, not a deployed service.
+
+## Latest rubric-fixes pass
+
+- Empty department/position names, missing job descriptions/requirements, zero/fractional
+  quotas and invalid calendar dates are rejected before publication, with linked field errors.
+- Editing a published field makes it a Draft; only a valid publish returns it to Published.
+- Existing application timestamps must remain within the configured receiving period.
+- Preview now includes departments, positions, quotas and requirements and fits 360×640.
+- Position IDs keep application labels and interviewer qualifications attached when names change.
+- See `checks/rubric-fixes.md` for the current tests, screenshots and local HTML validation.

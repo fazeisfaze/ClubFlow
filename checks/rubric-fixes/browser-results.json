@@ -1,0 +1,590 @@
+{
+  "viewports": [
+    {
+      "screen": "campaign",
+      "theme": "light",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "applications",
+      "theme": "light",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "schedule",
+      "theme": "light",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "campaign",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "applications",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "schedule",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "campaign",
+      "theme": "light",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "applications",
+      "theme": "light",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "schedule",
+      "theme": "light",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "campaign",
+      "theme": "dark",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "applications",
+      "theme": "dark",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "schedule",
+      "theme": "dark",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "campaign",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "applications",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "schedule",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "campaign",
+      "theme": "dark",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "applications",
+      "theme": "dark",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    },
+    {
+      "screen": "schedule",
+      "theme": "dark",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [],
+      "minFont": 16,
+      "overflow": [],
+      "contrastFailures": []
+    }
+  ],
+  "flows": {
+    "campaign_preview_fits_360x640": true,
+    "required_name_blocked": true,
+    "invalid_position_and_quota_blocked": true,
+    "valid_campaign_publishes": true,
+    "renamed_position_stays_linked_to_application": true,
+    "renamed_position_keeps_interviewer_qualification": true,
+    "search_returns_two_applications": true,
+    "closing_detail_preserves_filter": true,
+    "decision_is_per_application": true,
+    "note_survives_reload": true,
+    "csv_has_six_applications": true,
+    "initial_conflicts_block_confirmation": true,
+    "schedule_csv_has_five_rows": true,
+    "schedule_editor_fits_360x640": true,
+    "single_interview_duration_is_readonly": true,
+    "manual_resolution_enables_confirmation": true,
+    "confirmation_fits_360x640": true,
+    "confirmed_schedule_locked": true,
+    "confirmed_campaign_locked": true,
+    "confirmed_reviews_locked": true,
+    "date_before_deadline_blocked": true,
+    "changed_interview-date_invalidates_draft": true,
+    "changed_interview-date_persists_and_stays_blocked": true,
+    "changed_window-end_invalidates_draft": true,
+    "changed_window-end_persists_and_stays_blocked": true,
+    "changed_duration_invalidates_draft": true,
+    "changed_duration_persists_and_stays_blocked": true,
+    "regeneration_uses_uniform_15_minutes": true,
+    "applicant_unavailability_blocks_confirmation": true,
+    "cached_proposed_cannot_bypass_duration_check": true,
+    "unqualified_interviewer_blocked": true,
+    "long_names_wrap_without_overflow": true,
+    "all_viewports_meet_size_overflow_and_contrast_checks": true
+  },
+  "page_errors": [],
+  "external_requests": [],
+  "long_name_metrics": {
+    "width": 360,
+    "scrollWidth": 360,
+    "h1": 1,
+    "landmarks": [
+      [
+        "header",
+        1
+      ],
+      [
+        "nav",
+        1
+      ],
+      [
+        "main",
+        1
+      ],
+      [
+        "footer",
+        1
+      ]
+    ],
+    "smallTargets": [],
+    "minFont": 16,
+    "overflow": [],
+    "contrastFailures": []
+  }
+}

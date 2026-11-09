@@ -13,3 +13,19 @@
 - Browser console/page errors: 0; document width equals viewport width at all required sizes.
 - Evidence: `screenshots/schedule-360.png`, `screenshots/schedule-768.png`,
   `screenshots/schedule-1280.png`, `screenshots/schedule-ready-1280.png`.
+
+## Latest rubric-fixes pass
+
+- Generation, edits and final confirmation use the same authoritative validation rules:
+  required assignment fields, date/window, one campaign duration, applicant identity and
+  availability, interviewer qualification/availability, room availability and all overlaps.
+- Selected settings and the settings used to create the current draft are stored separately.
+  Changing any setting invalidates the draft until regeneration, including after reload.
+- The per-assignment duration is read-only. Global duration changes require regeneration.
+- A newly shortlisted application with no assignment appears as Unassigned and blocks confirmation.
+- Cached Proposed labels or empty conflict arrays cannot override missing/invalid assignment data.
+- Final confirmation validates the current state again before locking it.
+- The table shows each assignment's date. Sample availability is explicitly explained
+  as Nov 7, 2026, 09:00–11:00; dates without available resources remain Unassigned.
+- The editor and confirmation dialog fit 360×640. Current raw browser/HTML evidence is in
+  `checks/rubric-fixes/`, with refreshed light/dark screenshots in `screenshots/`.
