@@ -1,0 +1,907 @@
+{
+  "viewports": [
+    {
+      "screen": "campaign",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "Xem trước chiến dịch\n↗",
+          "height": 40
+        },
+        {
+          "text": "＋ Thêm vị trí",
+          "height": 40
+        },
+        {
+          "text": "＋ Thêm vị trí",
+          "height": 40
+        },
+        {
+          "text": "Lưu bản nháp",
+          "height": 40
+        },
+        {
+          "text": "Xem trước",
+          "height": 40
+        },
+        {
+          "text": "Đăng chiến dịch\n→",
+          "height": 40
+        },
+        {
+          "text": "Đến duyệt hồ sơ mẫu →",
+          "height": 40
+        }
+      ],
+      "targetCount": 12,
+      "minFont": 9,
+      "smallTextCount": 43,
+      "overflow": []
+    },
+    {
+      "screen": "applications",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "↓\nXuất CSV",
+          "height": 40
+        },
+        {
+          "text": "Xuất danh sách",
+          "height": 40
+        },
+        {
+          "text": "Ngày nộp ↑",
+          "height": 13.5
+        },
+        {
+          "text": "A01",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A02",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A03",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A04",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A05",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "Trước",
+          "height": 40
+        },
+        {
+          "text": "Sau",
+          "height": 40
+        },
+        {
+          "text": "Đóng chi tiết",
+          "height": 40
+        },
+        {
+          "text": "Mở nội dung CV mẫu",
+          "height": 15
+        },
+        {
+          "text": "Lưu ghi chú",
+          "height": 40
+        },
+        {
+          "text": "Shortlist",
+          "height": 40
+        },
+        {
+          "text": "Reject",
+          "height": 40
+        },
+        {
+          "text": "Đến xếp lịch\n→",
+          "height": 40
+        }
+      ],
+      "targetCount": 25,
+      "minFont": 9,
+      "smallTextCount": 93,
+      "overflow": []
+    },
+    {
+      "screen": "schedule",
+      "width": 360,
+      "scrollWidth": 360,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "↓ Xuất lịch CSV",
+          "height": 40
+        },
+        {
+          "text": "Tạo lịch nháp\n✦",
+          "height": 40
+        },
+        {
+          "text": "Giải quyết",
+          "height": 40
+        },
+        {
+          "text": "Giải quyết",
+          "height": 40
+        },
+        {
+          "text": "Sửa",
+          "height": 40
+        },
+        {
+          "text": "+ Gán giờ",
+          "height": 40
+        },
+        {
+          "text": "Sửa",
+          "height": 40
+        },
+        {
+          "text": "Lưu thay đổi",
+          "height": 40
+        },
+        {
+          "text": "Duyệt & xác nhận lịch",
+          "height": 40
+        }
+      ],
+      "targetCount": 14,
+      "minFont": 9,
+      "smallTextCount": 105,
+      "overflow": []
+    },
+    {
+      "screen": "campaign",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "Xem trước chiến dịch\n↗",
+          "height": 40
+        },
+        {
+          "text": "＋ Thêm bộ phận",
+          "height": 40
+        },
+        {
+          "text": "＋ Thêm vị trí",
+          "height": 40
+        },
+        {
+          "text": "＋ Thêm vị trí",
+          "height": 40
+        },
+        {
+          "text": "Lưu bản nháp",
+          "height": 40
+        },
+        {
+          "text": "Xem trước",
+          "height": 40
+        },
+        {
+          "text": "Đăng chiến dịch\n→",
+          "height": 40
+        },
+        {
+          "text": "Đến duyệt hồ sơ mẫu →",
+          "height": 40
+        }
+      ],
+      "targetCount": 12,
+      "minFont": 9,
+      "smallTextCount": 43,
+      "overflow": []
+    },
+    {
+      "screen": "applications",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "↓\nXuất CSV",
+          "height": 40
+        },
+        {
+          "text": "Xuất danh sách",
+          "height": 40
+        },
+        {
+          "text": "Ngày nộp ↑",
+          "height": 13.5
+        },
+        {
+          "text": "A01",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A02",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A03",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A04",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A05",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "Trước",
+          "height": 40
+        },
+        {
+          "text": "Sau",
+          "height": 40
+        },
+        {
+          "text": "Đóng chi tiết",
+          "height": 40
+        },
+        {
+          "text": "Mở nội dung CV mẫu",
+          "height": 15
+        },
+        {
+          "text": "Lưu ghi chú",
+          "height": 40
+        },
+        {
+          "text": "Shortlist",
+          "height": 40
+        },
+        {
+          "text": "Reject",
+          "height": 40
+        },
+        {
+          "text": "Đến xếp lịch\n→",
+          "height": 40
+        }
+      ],
+      "targetCount": 25,
+      "minFont": 9,
+      "smallTextCount": 93,
+      "overflow": []
+    },
+    {
+      "screen": "schedule",
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "↓ Xuất lịch CSV",
+          "height": 40
+        },
+        {
+          "text": "Tạo lịch nháp\n✦",
+          "height": 40
+        },
+        {
+          "text": "Giải quyết",
+          "height": 40
+        },
+        {
+          "text": "Giải quyết",
+          "height": 40
+        },
+        {
+          "text": "Sửa",
+          "height": 40
+        },
+        {
+          "text": "+ Gán giờ",
+          "height": 40
+        },
+        {
+          "text": "Sửa",
+          "height": 40
+        },
+        {
+          "text": "Lưu thay đổi",
+          "height": 40
+        },
+        {
+          "text": "Duyệt & xác nhận lịch",
+          "height": 40
+        },
+        {
+          "text": "← Quay lại duyệt hồ sơ",
+          "height": 40
+        }
+      ],
+      "targetCount": 14,
+      "minFont": 9,
+      "smallTextCount": 105,
+      "overflow": []
+    },
+    {
+      "screen": "campaign",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "Xem trước chiến dịch\n↗",
+          "height": 40
+        },
+        {
+          "text": "＋ Thêm bộ phận",
+          "height": 40
+        },
+        {
+          "text": "＋ Thêm vị trí",
+          "height": 40
+        },
+        {
+          "text": "＋ Thêm vị trí",
+          "height": 40
+        },
+        {
+          "text": "Lưu bản nháp",
+          "height": 40
+        },
+        {
+          "text": "Xem trước",
+          "height": 40
+        },
+        {
+          "text": "Đăng chiến dịch\n→",
+          "height": 40
+        },
+        {
+          "text": "Đến duyệt hồ sơ mẫu →",
+          "height": 40
+        }
+      ],
+      "targetCount": 12,
+      "minFont": 9,
+      "smallTextCount": 43,
+      "overflow": []
+    },
+    {
+      "screen": "applications",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "↓\nXuất CSV",
+          "height": 40
+        },
+        {
+          "text": "Xuất danh sách",
+          "height": 40
+        },
+        {
+          "text": "Ngày nộp ↑",
+          "height": 13.5
+        },
+        {
+          "text": "A01",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A02",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A03",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A04",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "A05",
+          "height": 16.5
+        },
+        {
+          "text": "Xem",
+          "height": 40
+        },
+        {
+          "text": "Trước",
+          "height": 40
+        },
+        {
+          "text": "Sau",
+          "height": 40
+        },
+        {
+          "text": "Đóng chi tiết",
+          "height": 40
+        },
+        {
+          "text": "Mở nội dung CV mẫu",
+          "height": 15
+        },
+        {
+          "text": "Lưu ghi chú",
+          "height": 40
+        },
+        {
+          "text": "Shortlist",
+          "height": 40
+        },
+        {
+          "text": "Reject",
+          "height": 40
+        },
+        {
+          "text": "Đến xếp lịch\n→",
+          "height": 40
+        }
+      ],
+      "targetCount": 25,
+      "minFont": 9,
+      "smallTextCount": 93,
+      "overflow": []
+    },
+    {
+      "screen": "schedule",
+      "width": 1280,
+      "scrollWidth": 1280,
+      "h1": 1,
+      "landmarks": [
+        [
+          "header",
+          1
+        ],
+        [
+          "nav",
+          1
+        ],
+        [
+          "main",
+          1
+        ],
+        [
+          "footer",
+          1
+        ]
+      ],
+      "smallTargets": [
+        {
+          "text": "C\nClubFlow",
+          "height": 36
+        },
+        {
+          "text": "↓ Xuất lịch CSV",
+          "height": 40
+        },
+        {
+          "text": "Tạo lịch nháp\n✦",
+          "height": 40
+        },
+        {
+          "text": "Giải quyết",
+          "height": 40
+        },
+        {
+          "text": "Giải quyết",
+          "height": 40
+        },
+        {
+          "text": "Sửa",
+          "height": 40
+        },
+        {
+          "text": "+ Gán giờ",
+          "height": 40
+        },
+        {
+          "text": "Sửa",
+          "height": 40
+        },
+        {
+          "text": "Lưu thay đổi",
+          "height": 40
+        },
+        {
+          "text": "Duyệt & xác nhận lịch",
+          "height": 40
+        },
+        {
+          "text": "← Quay lại duyệt hồ sơ",
+          "height": 40
+        }
+      ],
+      "targetCount": 14,
+      "minFont": 9,
+      "smallTextCount": 105,
+      "overflow": []
+    }
+  ],
+  "flows": {
+    "required_name_blocked": "true",
+    "invalid_position_publish": {
+      "state": "Published",
+      "quota": 0,
+      "title": "",
+      "message": "Chiến dịch đã được đăng. Hồ sơ mẫu chỉ đại diện cho đơn ứng tuyển đã nhận."
+    },
+    "per_application_decision": {
+      "A01": "Rejected",
+      "A02": "Shortlisted"
+    },
+    "initial_confirmation_disabled": true,
+    "generated_statuses": [
+      "Proposed",
+      "Proposed",
+      "Proposed",
+      "Proposed",
+      "Proposed"
+    ],
+    "confirmed": true,
+    "confirmed_generation_disabled": true,
+    "interview_before_close": {
+      "date": "2026-10-01",
+      "closing": "2026-10-30",
+      "confirm_enabled": true
+    },
+    "date_changed_without_regenerate": {
+      "assignment_date": "2026-11-07",
+      "summary": "BƯỚC CUỐI\n\nXác nhận lịch phỏng vấn?\n\nSau khi xác nhận, chiến dịch, hồ sơ và lịch sẽ chuyển sang chỉ đọc. Thao tác này không công bố kết quả tuyển dụng cuối cùng.\n\n5 hồ sơ · 01 tháng 12, 2026\n\n5 lịch hợp lệ · 0 xung đột · 0 chưa xếp\n\nQuay lại\nXác nhận lịch"
+    },
+    "mixed_durations": {
+      "intervals": [
+        "09:00-09:15",
+        "09:20-09:40",
+        "09:00-09:20",
+        "09:20-09:40",
+        "09:40-10:00"
+      ],
+      "confirm_enabled": true
+    },
+    "window_changed_without_recheck": {
+      "window_end": "09:05",
+      "confirm_enabled": true
+    }
+  },
+  "external_requests": [],
+  "page_errors": [],
+  "validation": {
+    "status": "Not rerun: external HTML upload omitted after automatic approval review rejection."
+  },
+  "contrast_samples": [
+    {
+      "text": "CHIẾN DỊCH HIỆN TẠI · CLB SÁNG TẠO SINH VIÊN",
+      "color": [
+        144,
+        161,
+        185,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 2.6301410763976873
+    },
+    {
+      "text": "Trong chiến dịch",
+      "color": [
+        144,
+        161,
+        185,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 2.6301410763976873
+    },
+    {
+      "text": "Sinh viên riêng biệt",
+      "color": [
+        144,
+        161,
+        185,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 2.6301410763976873
+    },
+    {
+      "text": "Sẵn sàng xếp lịch",
+      "color": [
+        144,
+        161,
+        185,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 2.6301410763976873
+    },
+    {
+      "text": "Hồ sơ đã đánh giá",
+      "color": [
+        144,
+        161,
+        185,
+        255
+      ],
+      "background": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "ratio": 2.6301410763976873
+    }
+  ],
+  "literal_static_rubric": {
+    "body_text": "",
+    "heading_count": 0
+  }
+}
