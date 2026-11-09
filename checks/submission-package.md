@@ -15,12 +15,11 @@
 
 ## Must be completed by the team before creating the final zip
 
-- [ ] Confirm Nguyen Diep Than's student ID if required for submission and ascending zip filename.
+- [x] Confirm team IDs: 24121705 and 24127120; ascending order is 24121705-24127120.
 - [ ] Confirm the official rubric criterion weights, score each row in
   `SELF_ASSESSMENT_REPORT.md`, and replace its pending total.
-- [ ] Create one zip named with the ascending student IDs and the same total as the self-report;
+- [ ] Create one zip named `24121705-24127120_<total>.zip` with the same total as the self-report;
   include this repository folder and `.git/`.
 - [ ] Reopen the final zip and verify required files and `dist/` are included.
 
-No final zip is created because the second ID and self-assessed score are still intentionally
-pending team input.
+No final zip is created because the self-assessed score is still pending team input.

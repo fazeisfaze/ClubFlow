@@ -105,7 +105,7 @@ supports all listed screen URLs and has no dependency on a remote service.
 ## Team Context
 
 - Huynh Thanh Phuc — Student ID: `24121705`
-- Nguyen Diep Than — Student ID: intentionally left blank pending the team's information
+- Nguyen Diep Than — Student ID: `24127120`
 
 The project team has two members. Split page ownership and verification work between them;
 coordinate edits to shared styles, JavaScript, sample fixtures, and submission evidence.

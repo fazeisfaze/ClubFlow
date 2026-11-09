@@ -17,7 +17,7 @@ Asked for: Plan the prototype and generate executable tasks grouped by user stor
 Kept: The single-campaign scope, three-screen flow, data invariants, and independent review/scheduling behavior.
 Changed: The plan and task paths were revised from static HTML to React/Vite/Tailwind after the team asked to use React and Tailwind where feasible. Team context was updated to two members.
 Rejected: The first parallel-work example with three contributors; it did not match the two-person team.
-By hand: Huynh Thanh Phuc supplied MSSV 24121705; the team explicitly left Nguyen Diep Than's MSSV blank.
+By hand: Huynh Thanh Phuc supplied MSSV 24121705. The team initially left Nguyen Diep Than's MSSV blank and later supplied 24127120.
 
 ## 2026-11-09 — React prototype implementation and checks
 Tool: OpenCode, GPT-6 Luna.

@@ -121,7 +121,7 @@ requirements are satisfied.
 - [X] T028 [P] Verify all hash-route paths, no horizontal overflow at 360/768/1280 px, and offline loading of built CSS/JS; record actual results in `checks/cross-screen-validation.md`
 - [X] T029 Capture final campaign, review, schedule, and responsive screenshots from `dist/` in `screenshots/`
 - [X] T030 Write `PROTOTYPE.md` with `dist/index.html#/campaign`, `dist/index.html#/applications`, and `dist/index.html#/schedule`
-- [ ] T031 Prepare English `brief.md`, `AI-LOG.md`, and `SELF_ASSESSMENT_REPORT.md` using `REQUIREMENT.md` and `AI-LOG-Template.md`; identify Huynh Thanh Phuc (24121705) and Nguyen Diep Than (Student ID pending), and attach evidence per rubric criterion; finalize scores after team review
+- [ ] T031 Prepare English `brief.md`, `AI-LOG.md`, and `SELF_ASSESSMENT_REPORT.md` using `REQUIREMENT.md` and `AI-LOG-Template.md`; identify Huynh Thanh Phuc (24121705) and Nguyen Diep Than (24127120), attach evidence per rubric criterion, and finalize scores after team review
 - [ ] T032 Review final package contents, committed `dist/`, and `.git` presence against `REQUIREMENT.md`; document the packaging checklist in `checks/submission-package.md` and create the final zip after team ID/score are known
 
 ---
